@@ -32,7 +32,7 @@ public class ISAutoStart extends ModuleBase {
 		
 		// Add the default stream which is a VOD file stored in the /content folder.
 		// This file will play when no cameras are publishing to the app.
-		_playlist.addItem("mp4:sample.mp4", 0, 630);
+		_playlist.addItem("mp4:3_cloning.mp4", 0, 3600);
 
 		// Create the stream that will be published out
 		_stream = Stream.createInstance(appInstance, _streamName);

@@ -6,7 +6,14 @@ import com.wowza.wms.logging.WMSLoggerFactory;
 import com.wowza.wms.request.RequestFunction;
 import com.wowza.wms.vhost.IVHost;
 import com.wowza.wms.vhost.IVHostNotify;
+import com.wowza.wms.vhost.VHostSingleton;
 
+/**
+ * 
+ * ISAutoStartVHost - 
+ * @author petercouture
+ *
+ */
 public class ISAutoStartVHost implements IVHostNotify {
 
 	IVHost _vhost;
@@ -46,13 +53,12 @@ public class ISAutoStartVHost implements IVHostNotify {
 	}
 
 	/**
-	 * The function call that 
+	 * The function call that starts the application 
 	 */
-	public void startApplication(){
+	public void startApplication(String appName){
 		WMSLoggerFactory.getLogger(null).info("startApplication");
-		
-		// Set the 
-		_vhost.startApplicationInstance("autostart");
+		// Start the application listed in the VHost config file properties node
+		_vhost.startApplicationInstance(appName);
 	}
 	
 }
