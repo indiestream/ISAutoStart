@@ -31,9 +31,14 @@ Occasionally as a streaming engineer you often need to have a Live stream runnin
 </Property>
 ```
 
+Where:
+* **autoStartVHostName** - The name of the VHost the application will run on
+* **autoStartApplicationName** - The name of application that will be started on boot.
+
+
 4.) Now create the application by adding the ```autostart``` folder in both the ```applications``` and ```conf```. Copy the application configuration file ```Application.xml``` from the ```live``` application into the new folder.
 
-5.) Edit the newly created ```Application.xml``` file located in ```conf/autostart/Application.xml```. Scroll down to the bottom and add the following properties in the ```<Properties>``` node. You can update the default values to 
+5.) Edit the newly created ```Application.xml``` file located in ```conf/autostart/Application.xml```. Scroll down to the bottom and add the following properties in the ```<Properties>``` node. You can update the default values to your own.
 
 ```
 <Property>
@@ -57,5 +62,12 @@ Occasionally as a streaming engineer you often need to have a Live stream runnin
   <Type>String</Type>
 </Property>
 ```
+
+Where:
+* **autoStartFileName** - The name of the file to play in the content folder.
+* **autoStartStartTime** - The start time of the movie.
+* **autoStartDuration** - The duration of playback time of the movie.
+* **autoStartStreamName** - The name of the Live output stream.
+
 
 ---
