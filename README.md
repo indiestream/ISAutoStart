@@ -1,14 +1,14 @@
 # ISAutoStart
 
-As a streaming engineer you often need to have a Live stream running to test on. Especially if you're working on a player. Here's a useful library to get one going in Wowza with the need of an encoder or webcam. You can learn more about how it works [here](http://www.indiestre.am/index.php/2017/02/16/auto-starting-an-application-using-wowza/).
+Occasionally as a streaming engineer you often need to have a Live stream running to test on. Especially if you're working on a player. Here's a useful library to get one going in Wowza with the need of an encoder or webcam. By default the program runs on the application name ```autostart```. You can change that via the properites explained below. You can learn more about how it works [here](http://www.indiestre.am/index.php/2017/02/16/auto-starting-an-application-using-wowza/).
 
 ---
 
 ## Setup
 
-1. Copy ISAutoStart.jar to your Wowza lib/ folder.
+1.) Copy ISAutoStart.jar to your Wowza ```lib/``` folder.
 
-2. Edit the Wowza configuration file located at conf/Server.xml Scroll down to the bottom and add the following in the ```<ServerListeners>``` node.
+2.) Edit the Wowza configuration file located at ```conf/Server.xml``` Scroll down to the bottom and add the following in the ```<ServerListeners>``` node.
 
 ```
 <ServerListener>
@@ -16,7 +16,7 @@ As a streaming engineer you often need to have a Live stream running to test on.
 </ServerListener>
 ```
 
-3. Further down in the same file add the following two properties in the ```<Properties>``` node. You can update the values to represet a different VHost then the default one and the application name. By default the program runs on the application name ```autostart```
+3.) Further down in the same file add the following two properties in the ```<Properties>``` node. You can update the values to represet a different VHost and the application name then the default ones.
 
 ```
 <Property>
@@ -31,6 +31,31 @@ As a streaming engineer you often need to have a Live stream running to test on.
 </Property>
 ```
 
-4. Now create the application by adding the ```autostart``` folder in both the ```applications``` and ```conf```. Copy the application configuration file ```Application.xml``` from the ```live``` application into the new folder.
+4.) Now create the application by adding the ```autostart``` folder in both the ```applications``` and ```conf```. Copy the application configuration file ```Application.xml``` from the ```live``` application into the new folder.
+
+5.) Edit the newly created ```Application.xml``` file located in ```conf/autostart/Application.xml```. Scroll down to the bottom and add the following properties in the ```<Properties>``` node. You can update the default values to 
+
+```
+<Property>
+  <Name>autoStartFileName</Name>
+  <Value>mp4:sample.mp4</Value>
+  <Type>String</Type>
+</Property>
+<Property>
+  <Name>autoStartStartTime</Name>
+  <Value>0</Value>
+  <Type>Integer</Type>
+</Property>
+<Property>
+  <Name>autoStartDuration</Name>
+  <Value>10</Value>
+  <Type>Integer</Type>
+</Property>
+<Property>
+  <Name>autoStartStreamName</Name>
+  <Value>feed</Value>
+  <Type>String</Type>
+</Property>
+```
 
 ---
