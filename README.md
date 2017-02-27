@@ -38,7 +38,18 @@ Where:
 
 4.) Now create the application by adding the ```autostart``` folder in both the ```applications``` and ```conf```. Copy the application configuration file ```Application.xml``` from the ```live``` application into the new folder.
 
-5.) Edit the newly created ```Application.xml``` file located in ```conf/autostart/Application.xml```. Scroll down to the bottom and add the following properties in the ```<Properties>``` node. You can update the default values to your own.
+5.) Edit the newly created ```Application.xml``` file located in ```conf/autostart/Application.xml```. Scroll down near the bottom and add the module to the ```<Modules>``` node.
+
+```
+<Module>
+	<Name>ISAutoStart</Name>
+	<Description>Autostarts VOD content as a Live Stream</Description>
+	<Class>com.indiestream.isautostart.ISAutoStart</Class>
+</Module>
+```
+
+6.) Scroll down a little further and add the following properties in the ```<Properties>``` node. You can update the default values to your own.
+
 
 ```
 <Property>
